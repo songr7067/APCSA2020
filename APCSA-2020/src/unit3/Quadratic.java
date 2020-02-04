@@ -52,7 +52,7 @@ public class Quadratic
     	System.out.print("b = " + b + " ");
     	System.out.println("c = " + c);
     	System.out.printf("rootOne :: %.4f\n", rootOne);
-    	System.out.printf("rootOne :: %.4f\n", rootTwo);
+    	System.out.printf("rootTwo :: %.4f\n", rootTwo);
     	System.out.println("\n");
     }
     
@@ -60,6 +60,6 @@ public class Quadratic
 
 	public String toString()
 	{
-		return "";
+		return "rootOne = " + rootOne + "\n rootTwo = " + rootTwo;
 	}
 }

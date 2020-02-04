@@ -39,6 +39,7 @@ public class QuadraticRunner
 		equation.setEquation(9, 6, 1);
 		equation.calcRoots();
 		equation.print();
+		System.out.println(equation);
 		
 	}
 }
