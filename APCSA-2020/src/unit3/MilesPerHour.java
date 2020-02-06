@@ -18,8 +18,8 @@ public class MilesPerHour
 
 	public MilesPerHour()
 	{
-		setNums(0,0,0);
-		mph=0.0;
+		setNums(45,0,32);
+		mph=84;
 	}
 
 	public MilesPerHour(int dist, int hrs, int mins)

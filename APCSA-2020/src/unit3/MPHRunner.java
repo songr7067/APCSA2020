@@ -25,13 +25,17 @@ public class MPHRunner
 
 		out.print("Enter the minutes :: ");
 		int mins = keyboard.nextInt();
-
+		
 		MilesPerHour test = new MilesPerHour(dist, hrs, mins);
 		test.calcMPH();
 		test.print();
 		
 		//add more test cases
-		System.out.println("------------OTHER TEST CASES------------");
+		System.out.println("------------TEST CASES------------");
+		test.setNums(45, 0, 32);
+		test.calcMPH();
+		test.print();
+		
 		//96 miles 1 hour 43 minutes
 		test.setNums(96, 1, 43);
 		test.calcMPH();
