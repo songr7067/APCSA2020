@@ -11,17 +11,13 @@ public class FirstLastVowel
 	{
 	   String first = a.substring(0,1);
 	   String last = a.substring(a.length()-1);
-	   if (first.equals("a") || first.equals("e") 
-			   || first.equals("i") || first.equals("o") 
-			   || first.equals("u") || first.equals("A")
-			   || first.equals("E") || first.equals("I") 
-			   || first.equals("O") || first.equals("U"))
+	   if (first.equalsIgnoreCase("a") || first.equalsIgnoreCase("e") 
+			   || first.equalsIgnoreCase("i") || first.equalsIgnoreCase("o") 
+			   || first.equalsIgnoreCase("u") )
 		   return "yes";
-	   else if (last.equals("a") || last.equals("e") 
-			   || last.equals("i") || last.equals("o") 
-			   || last.equals("u") || last.equals("A")
-			   || last.equals("E") || last.equals("I") 
-			   || last.equals("O") || last.equals("U"))
+	   else if (last.equalsIgnoreCase("a") || last.equalsIgnoreCase("e") 
+			   || last.equalsIgnoreCase("i") || last.equalsIgnoreCase("o") 
+			   || last.equalsIgnoreCase("u"))
 		   return "yes";
 	   else 
 		return "no";

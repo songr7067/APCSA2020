@@ -10,5 +10,7 @@ public class TriangleOneRunner
 	public static void main ( String[] args )
 	{
 		//add test cases		
+		TriangleOne test = new TriangleOne("hippo");
+		test.print();
 	}
 }
