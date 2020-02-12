@@ -27,9 +27,10 @@ public class TriangleOne
 	public void print( )
 	{
 		int length = word.length();
-		for (int i = 0; i< length-1; i++) {
+		for (int i = length; i>0; i--) {
+			word = word.substring(0,i);
 			System.out.println(word);
-			word = word.substring(0,word.length()-i);
 		}
+		System.out.println("\n");
 	}
 }
