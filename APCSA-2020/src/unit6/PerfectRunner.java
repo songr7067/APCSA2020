@@ -11,8 +11,26 @@ public class PerfectRunner
 	{
 		//add test cases
 		Perfect test = new Perfect(496);
-		test.isPerfect();
 		System.out.println(test);
+		test.setNumber(45);
+		System.out.println(test);
+		test.setNumber(6);
+		System.out.println(test);
+		test.setNumber(14);
+		System.out.println(test);
+		test.setNumber(8128);
+		System.out.println(test);
+		test.setNumber(1245);
+		System.out.println(test);
+		test.setNumber(33);
+		System.out.println(test);
+		test.setNumber(28);
+		System.out.println(test);
+		test.setNumber(27);
+		System.out.println(test);
+		test.setNumber(33550336);
+		System.out.println(test);
+		
 																
 	}
 }

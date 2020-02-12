@@ -25,12 +25,13 @@ public class Perfect
 
 	public boolean isPerfect()
 	{
-		int total = 0;
-		for (int i = 1; i<number; i++) {
-			if (number%i==0) {
-				total += number;
-			}
-		}
+		int total = 1;
+		int i = 2;
+		do {
+			if (number%i == 0)
+				total += i;
+			i++;
+		}while(i<number);
 		if (total == number) {
 			return true;
 		}
@@ -41,9 +42,9 @@ public class Perfect
 	//add a toString	
 	public String toString() {
 		if (isPerfect()) 
-			return number + " is perfect.";
+			return number + " is perfect.\n";
 		else 
-			return number + " is not perfect.";
+			return number + " is not perfect.\n";
 			
 	}
 }
