@@ -32,13 +32,8 @@ public class LetterRemover
 	{
 		String cleaned=sentence;
 		int location = cleaned.indexOf(lookFor);
-		while (location>0) {
-			if (location != 0) {
+		while (location>=0) {
 				sentence = sentence.substring(0,location)+sentence.substring(location+1);
-			}
-			else {
-				sentence = sentence.substring(1);
-			}
 			location = sentence.indexOf(lookFor);
 		}
 		cleaned = sentence;

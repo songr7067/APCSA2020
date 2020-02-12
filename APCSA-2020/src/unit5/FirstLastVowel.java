@@ -11,13 +11,8 @@ public class FirstLastVowel
 	{
 	   String first = a.substring(0,1);
 	   String last = a.substring(a.length()-1);
-	   if (first.equalsIgnoreCase("a") || first.equalsIgnoreCase("e") 
-			   || first.equalsIgnoreCase("i") || first.equalsIgnoreCase("o") 
-			   || first.equalsIgnoreCase("u") )
-		   return "yes";
-	   else if (last.equalsIgnoreCase("a") || last.equalsIgnoreCase("e") 
-			   || last.equalsIgnoreCase("i") || last.equalsIgnoreCase("o") 
-			   || last.equalsIgnoreCase("u"))
+	   String vowels = "aeiouAEIOU";
+	   if(vowels.contains(first)||vowels.contains(last))
 		   return "yes";
 	   else 
 		return "no";
