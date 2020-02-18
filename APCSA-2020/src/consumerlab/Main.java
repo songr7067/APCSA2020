@@ -8,7 +8,9 @@ class Main {
 		// test reading from files
 		// read in the positive adjectives in postiveAdjectives.txt
 		System.out.println(Review.sentimentVal("yes"));
-		System.out.println(Review.totalSentiment("src/consumerlab/simpleReview.txt"));
+		System.out.println(Review.totalSentiment("src/consumerlab/26WestReview.txt"));
+		System.out.println(Review.starRating("src/consumerlab/26WestReview.txt"));
+		
 		
 		try {
 			Scanner input = new Scanner(new File("src/consumerlab/positiveAdjectives.txt"));

@@ -154,7 +154,7 @@ public class Review {
 		// add in its sentimentVal
 		// set the file contents to start after this word
 		for (int i = 0; i < read.length(); i++) {
-			if (read.charAt(i) == '!' || read.charAt(i) == '.' || read.charAt(i) == ',' || read.charAt(i) == '?')
+			if (read.charAt(i) == '!' || read.charAt(i) == '.' || read.charAt(i) == ',' || read.charAt(i) == '?'|| read.charAt(i)=='('||read.charAt(i)==')'||read.charAt(i)=='$'||read.charAt(i)==':'||read.charAt(i)==';')
 				read = read.substring(0, i) + read.substring(i + 1);
 		}
 		while (read.length() > 0) {
@@ -177,10 +177,20 @@ public class Review {
 	 */
 	public static int starRating(String filename) {
 		// call the totalSentiment method with the fileName
-
+		double totalSentiment = totalSentiment(filename);
 		// determine number of stars between 0 and 4 based on totalSentiment value
-		int stars = 0;
 		// write if statements here
+		int stars = 0;
+		if (totalSentiment >15) {
+			stars =4;
+		}else if(totalSentiment >10) {
+			stars =3;
+		}else if(totalSentiment >5) {
+			stars = 2;
+		}else if(totalSentiment >0) {
+			stars =1;
+		}else
+			stars =0;
 
 		// return number of stars
 		return stars;
