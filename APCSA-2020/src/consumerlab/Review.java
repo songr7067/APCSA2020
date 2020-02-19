@@ -36,7 +36,6 @@ public class Review {
 			Scanner input = new Scanner(new File("src/consumerlab/positiveAdjectives.txt"));
 			while (input.hasNextLine()) {
 				String temp = input.nextLine().trim();
-				System.out.println(temp);
 				posAdjectives.add(temp);
 			}
 			input.close();
@@ -159,10 +158,10 @@ public class Review {
 		}
 		while (read.length() > 0) {
 
-			if (read.indexOf(" ") > 0) {
-				word = read.substring(0, read.indexOf(" "));
+			if (read.indexOf(SPACE) > 0) {
+				word = read.substring(0, read.indexOf(SPACE));
 				sentimentTotal += sentimentVal(word);
-				read = read.substring(read.indexOf(" ") + 1);
+				read = read.substring(read.indexOf(SPACE) + 1);
 			} else {
 				sentimentTotal += sentimentVal(read);
 				break;
@@ -194,5 +193,18 @@ public class Review {
 
 		// return number of stars
 		return stars;
+	}
+	
+	public static String fakeReview(String filename) {
+		String read = textToString(filename).trim();
+		for(int i = 0; i<read.length(); i++) {
+			if(read.charAt(i) == '*'){
+				if (sentimentVal(read.substring(i+1,read.indexOf(" ",i)))<=0) {
+					read = read.substring(0,i) + randomPositiveAdj() + read.substring(read.indexOf(" ",i));
+				}
+				
+			}
+		}
+		return read;
 	}
 }
