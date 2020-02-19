@@ -7,7 +7,7 @@ class Main {
 	public static void main(String[] args) {
 		// test reading from files
 		// read in the positive adjectives in postiveAdjectives.txt
-		System.out.println(Review.sentimentVal("chewy"));
+		System.out.println(Review.sentimentVal("cold"));
 		System.out.println(Review.sentimentVal("hot"));
 		System.out.println(Review.sentimentVal("warm"));
 		System.out.println(Review.totalSentiment("src/consumerlab/simpleReview.txt"));
