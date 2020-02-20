@@ -62,8 +62,6 @@ public class Triples
 				max = i;
 			}
 		}
-
-
 		return max;
 	}
 	
