@@ -45,10 +45,11 @@ public class Triples
 			return false;
 	}
 	
+	
 	private boolean checkOddEven(int a, int b, int c) {
 		if (c%2==0)
 			return false;
-		if (a%2!=0&&b%2==0||a%2==0&&b%2!=0)
+		if (a%2 !=0 && b%2 == 0 || a%2 == 0 && b%2 !=0)
 			return true;
 		else 
 			return false;

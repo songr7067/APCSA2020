@@ -33,6 +33,7 @@ public class Card
 		//get methods
 
 
+
   	//toString
 
  }
