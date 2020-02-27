@@ -35,11 +35,11 @@ public class Deck
 	}
    
    //make a dealCard() method that returns the top card
-	public String dealCard() {
+	public Card dealCard() {
 		if (top<0) {
 			top =51;
 		}
-		String output = cards.get(top).toString();
+		Card output = cards.get(top);
 		top--;
 		return output;
 	}
