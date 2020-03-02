@@ -15,11 +15,12 @@ public class Deck
 	
 	private List<Card> cards;
 	private int top;
+	private int size;
 	
 	
    //make a Deck constructor
 	public Deck() {
-		top = 51;
+		top = size-1;
 	cards = new ArrayList<Card>();
    	//refer cards to new ArrayList
    	//set top to the top of the deck 51
@@ -34,20 +35,55 @@ public class Deck
 		}
 	}
    
+	public Deck(String[]ranks, String[]suits, int[] pointValues) {
+		cards = new ArrayList<Card>();
+		for(int s = 0; s<suits.length; s++) {
+			for ( int r = 0; r<ranks.length;r++) {
+				cards.add(new Card(ranks[r],suits[s], pointValues[r]));
+			}
+		}
+		size = cards.size();
+		top = size-1;
+		shuffle();
+	}
+	
    //make a dealCard() method that returns the top card
 	public Card dealCard() {
+		Card output = null;
 		if (top<0) {
-			top =51;
+			resetTop();
+			top = size -1;
 		}
-		Card output = cards.get(top);
+		if(top>=0) {
+		output = cards.get(top);
 		top--;
+		size--;
+		}
 		return output;
+	}
+	
+	public boolean isEmpty() {
+		return size()==0;
+	}
+
+	public int size() {
+		return size;
+	}
+	
+	public void resetTop() {
+		size = cards.size();
+		top = size-1;
 	}
    //write a shuffle() method
    	//use Colletions.shuffle
    	//reset the top card 
 	public void shuffle() {
 		Collections.shuffle(cards);
-		top = 51;
+	}
+	
+	public String toString() {
+		String output = "size = " + size + "\nUndealt cards: \n";
+		
+		return output;
 	}
 }
