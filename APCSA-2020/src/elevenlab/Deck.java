@@ -83,7 +83,22 @@ public class Deck
 	
 	public String toString() {
 		String output = "size = " + size + "\nUndealt cards: \n";
-		
+		for (int i = size-1; i>=0;i--) {
+			if (i>0) {
+				output += cards.get(i) + ", ";
+			}
+			else 
+				output += cards.get(i) + "\n";
+		}
+		output += "\nDealt cards: \n";
+		for (int k = cards.size()-1;k>=size;k--) {
+			if (k>size) {
+				output += cards.get(k) + ", ";
+			}
+			else 
+				output += cards.get(k) + "\n";
+
+		}
 		return output;
 	}
 }
