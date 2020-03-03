@@ -50,6 +50,9 @@ public class Deck
    //make a dealCard() method that returns the top card
 	public Card dealCard() {
 		Card output = null;
+		if (size==0) {
+			return output;
+		}
 		if (top<0) {
 			resetTop();
 			top = size -1;
