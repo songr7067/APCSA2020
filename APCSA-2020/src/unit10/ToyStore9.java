@@ -24,23 +24,35 @@ public class ToyStore9
 		int indexOf = toys.indexOf(" ");
 		toyList.add(new Toy(toys.substring(0,indexOf)));
 		while (indexOf>0) {
-			
-			Toy newToy = new Toy(toys.substring(0,indexOf));
 			String toyName = toys.substring(0,indexOf);
+			Toy newToy = new Toy(toyName);
+			boolean added = false;
 			
 			for(int i = 0; i<toyList.size();i++) {
 				if(toyList.get(i).getName().equals(toyName)) {
-					newToy.setCount(newToy.getCount()+1);
-					break;
+					toyList.get(i).setCount(toyList.get(i).getCount()+1);
+					added = true;
 				}
-				}
+			}
+			if(!added) {
 				toyList.add(newToy);
-				toyList.get(1).setCount(1);
-				}
-			toys = toys.substring(indexOf+1);
-			indexOf = toys.indexOf(" ");
-			
+				toyList.get(toyList.size()-1).setCount(1);
+			}
+		toys = toys.substring(indexOf+1);
+		indexOf = toys.indexOf(" ");
 		}
+		String toyName = toys.substring(0);
+		boolean added = false;
+		for(int i = 0; i<toyList.size();i++) {
+			if(toyList.get(i).getName().equals(toyName)) {
+				toyList.get(i).setCount(toyList.get(i).getCount()+1);
+				added = true;
+			}
+		}
+		if (!added) {
+			toyList.add(new Toy(toyName));
+		}
+	}
   
   	public Toy getThatToy( String nm )
   	{
@@ -65,6 +77,20 @@ public class ToyStore9
   
   	public void sortToysByCount()
   	{
+  		int index = 0; 
+  		for (int i = 0; i<toyList.size();i++) {
+  			int greatest = toyList.get(i).getCount();
+  			for(int k = i; k<toyList.size();k++) {
+  				if(greatest < toyList.get(k).getCount()) {
+  					greatest = toyList.get(k).getCount();
+  					index = k;
+  				}
+  			}
+  			
+  			toyList.add(i, new Toy(toyList.get(index).getName()));
+  			toyList.get(i).setCount(toyList.get(index+1).getCount());
+  			toyList.remove(index+1);
+  		}
   	}  
   	  
   	
@@ -74,10 +100,15 @@ public class ToyStore9
   	
 	public String toString()
 	{
-		String output = "";
+		String output = "[";
 		for(int i = 0; i<toyList.size();i++) {
-			output += toyList.get(i).toString() + " ";
+			if(i==toyList.size()-1) {
+				output += toyList.get(i).toString();
+				break;
+			}
+			output += toyList.get(i).toString() + ", ";
 		}
-	   return output;
+		output += "]";
+		return output;
 	}
 }
