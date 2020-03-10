@@ -49,7 +49,7 @@ public class StartPanel extends JPanel
 	/**
 	 * Customize the JRadioButton for the class created sub class
 	 */
-
+	private JRadioButton poetryRadio;
 	/**
 	 * Label to guide the user to what should be inputted.
 	 */
@@ -93,7 +93,7 @@ public class StartPanel extends JPanel
 	/**
 	 * String to populate the clueLabel if Class Generated Celebrity is picked.
 	 */
-	
+	private String poetryClue;
 	
 	/**
 	 * String used for static text in label.
@@ -122,11 +122,13 @@ public class StartPanel extends JPanel
 		this.typeGroup = new ButtonGroup();
 		this.celebrityRadio = new JRadioButton("Celebrity");
 		this.literatureRadio = new JRadioButton("Literature Celebrity");
+		this.poetryRadio = new JRadioButton("Poetry Celebrity");
 		this.celebrityClue = "Enter the clue for the celebrity";
 		this.literatureClue = "Enter the clues for the literature celeb separated by commas";
+		this.poetryClue = "Enter the clues for the poetry celeb separated by commas";
 		this.clueLabel = new JLabel(celebrityClue);
 		
-		this.answerField = new JTextField("Type celebrity here (4 letters minimum thx Cher)");
+		this.answerField = new JTextField("Type celebrity here (4 letters minimum)");
 		this.clueField = new JTextField("Enter celebrity clue here (10 letters minimum)");
 		this.addCelebrityButton = new JButton("Add current celebrity");
 		this.startButton = new JButton("Start Celebrity game");
@@ -188,12 +190,15 @@ public class StartPanel extends JPanel
 		this.add(startButton);
 		this.add(celebrityCountLabel);
 		this.add(addCelebrityButton);
+		this.add(poetryRadio);
+		
 
 		// Adds the RadioButtons to the group so only one can be selected.
 		celebrityRadio.setSelected(true);
 		startButton.setEnabled(false);
 		typeGroup.add(celebrityRadio);
 		typeGroup.add(literatureRadio);
+		typeGroup.add(poetryRadio);
 
 	}
 
@@ -219,6 +224,8 @@ public class StartPanel extends JPanel
 		
 		panelLayout.putConstraint(SpringLayout.NORTH, literatureRadio, 10, SpringLayout.SOUTH, celebrityRadio);
 		panelLayout.putConstraint(SpringLayout.WEST, literatureRadio, 0, SpringLayout.WEST, celebrityRadio);
+		panelLayout.putConstraint(SpringLayout.NORTH, poetryRadio, 10, SpringLayout.SOUTH, literatureRadio);
+		panelLayout.putConstraint(SpringLayout.WEST, poetryRadio, 0, SpringLayout.WEST, literatureRadio);
 
 		panelLayout.putConstraint(SpringLayout.NORTH, clueLabel, 10, SpringLayout.SOUTH, answerField);
 		panelLayout.putConstraint(SpringLayout.NORTH, answerField, 40, SpringLayout.SOUTH, literatureRadio);

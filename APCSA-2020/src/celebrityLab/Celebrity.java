@@ -9,7 +9,8 @@ public class Celebrity
 	/**
 	 * The clue to determine the celebrity
 	 */
-	
+	private String answer;
+	private String clue;
 	/**
 	 * The answer or name of the celebrity.
 	 */
@@ -19,8 +20,10 @@ public class Celebrity
 	 * @param answer
 	 * @param clue
 	 */
-	public Celebrity(String answer, String clue)
+	public Celebrity(String ans, String cl)
 	{
+		setAnswer(ans);
+		setClue(cl);;
 	}
 
 	/**
@@ -29,7 +32,7 @@ public class Celebrity
 	 */
 	public String getClue()
 	{
-		return null;
+		return clue;
 	}
 
 	/**
@@ -38,25 +41,25 @@ public class Celebrity
 	 */
 	public String getAnswer()
 	{
-		return null;
+		return answer;
 	}
 
 	/**
 	 * Updates the clue to the provided String.
 	 * @param clue The new clue.
 	 */
-	public void setClue(String clue)
+	public void setClue(String cl)
 	{
-		
+		clue = cl;
 	}
 
 	/**
 	 * Updates the answer to the provided String.
 	 * @param answer The new answer.
 	 */
-	public void setAnswer(String answer)
+	public void setAnswer(String ans)
 	{
-		
+		answer = ans;
 	}
 	
 	/**
@@ -65,7 +68,7 @@ public class Celebrity
 	@Override
 	public String toString()
 	{
-		return null;
+		return "The clue given was " + clue + ".\n The Answer is " + answer + ".";
 	}
 	
 }
