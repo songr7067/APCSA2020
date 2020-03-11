@@ -86,8 +86,18 @@ public class CelebrityGame
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
+		Celebrity currentCelebrity;
 		if(validateCelebrity(name)&&validateClue(guess, type)) {
-			celebGameList.add(new Celebrity(name, guess));
+		if(type.equals("Literature")) {
+			currentCelebrity = new LiteratureCelebrity(name, guess);
+		}
+		else if (type.equals("Poetry")) {
+			currentCelebrity = new PoetryCelebrity(name,guess);
+		}
+		else {
+			currentCelebrity = new Celebrity(name,guess);
+		}
+		celebGameList.add(currentCelebrity);
 		}
 	}
 
@@ -117,6 +127,30 @@ public class CelebrityGame
 		boolean valid = false;
 		if(clue.trim().length()>=10) {
 			valid = true;
+		}
+		if (type.equalsIgnoreCase("literature"))
+		{
+		String[] temp = clue.split(",");
+		if (temp.length > 1)
+		{
+		valid = true;
+		}
+		else
+		{
+		valid = false;
+		}
+		}
+		if (type.equalsIgnoreCase("poetry"))
+		{
+		String[] temp1 = clue.split(",");
+		if (temp1.length > 1)
+		{
+		valid = true;
+		}
+		else
+		{
+		valid = false;
+		}
 		}
 		return valid;
 	}

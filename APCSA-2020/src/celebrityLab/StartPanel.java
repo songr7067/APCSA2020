@@ -283,6 +283,7 @@ public class StartPanel extends JPanel
 		 */
 		literatureRadio.addActionListener(select -> clueLabel.setText(literatureClue));
 		celebrityRadio.addActionListener(select -> clueLabel.setText(celebrityClue));
+		poetryRadio.addActionListener(select -> clueLabel.setText(poetryClue));
 
 	}
 	
@@ -300,6 +301,9 @@ public class StartPanel extends JPanel
 		if (literatureRadio.isSelected())
 		{
 			type = "Literature";
+		}
+		else if(poetryRadio.isSelected()) {
+			type = "Poetry";
 		}
 		String answer = answerField.getText().trim();
 		String clue = clueField.getText().trim();
