@@ -11,15 +11,13 @@ import static java.lang.System.*;
 
 public class NumberShifterRunner
 {
-	public static void main( String args[] ) 
+	public static void main( String args[] ) throws IOException
 	{
 		//add test cases
-		int randomLength = (int) (Math.random()*5+10);
-		int[] arr1 = new int[randomLength];
-		for(int i = 0; i < randomLength;i++) {
-			arr1[i]= (int) (Math.random()*10+1);
-		}
-		System.out.println(arr1);
+		int[] arr1 = NumberShifter.makeLucky7Array(10);
+		System.out.println(Arrays.toString(arr1));
+		NumberShifter.shiftEm(arr1);
+		System.out.println(Arrays.toString(arr1));
 	}
 }
 
