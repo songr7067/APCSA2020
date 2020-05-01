@@ -107,7 +107,7 @@ public class Ball extends Block implements Collidable
 	@Override
 	public boolean didCollideRight(Object obj) {
 		Block test = (Block) obj;
-		if((this.getX()+this.getWidth()-this.getXSpeed()>=test.getX())
+		if((this.getX()+this.getWidth()+this.getXSpeed()>=test.getX())
 				&& ((this.getY()>= test.getY()&&this.getY()<=test.getY()+test.getHeight())
 				||(this.getY()+this.getHeight()>=test.getY()&&this.getY()+this.getHeight()<test.getY()+test.getHeight()))) {
 			return true;
