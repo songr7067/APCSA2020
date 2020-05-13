@@ -70,10 +70,13 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		//we will draw all changes on the background image
 		Graphics graphToBack = back.createGraphics();
 
-		graphToBack.setColor(Color.BLUE);
-		graphToBack.drawString("StarFighter ", 25, 50 );
+		
 		graphToBack.setColor(Color.BLACK);
 		graphToBack.fillRect(0,0,800,600);
+		
+		graphToBack.setColor(Color.BLUE);
+		graphToBack.drawString("StarFighter ", 25, 50 );
+		
 		ship.draw(graphToBack);
 		horde.drawEmAll(graphToBack);
 		
